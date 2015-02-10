@@ -26,7 +26,7 @@ class SECP256k1:
     Gy = 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8L
     curve = ecdsa.ellipticcurve.CurveFp(p, a, b)
     G = ecdsa.ellipticcurve.Point(curve, Gx, Gy, order)
-    ecdsa_curve = ecdsa.curves.Curve("SECP256k1", curve, G, oid)
+    ecdsa_curve = ecdsa.curves.Curve(1, "SECP256k1", curve, G, oid)
 
 def encode_point(p, compressed):
     order = SECP256k1.order
